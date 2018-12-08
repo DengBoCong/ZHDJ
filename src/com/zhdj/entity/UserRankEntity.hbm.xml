@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.UserRankEntity" table="user_rank" schema="zhdj">
+        <id name="userid">
+            <column name="userid" sql-type="varchar(50)" length="50" not-null="true"/>
+        </id>
+        <property name="rankSource">
+            <column name="rank_source" sql-type="int(11)"/>
+        </property>
+        <property name="sourceStituationfirst">
+            <column name="source_stituationfirst" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="rankSourceold">
+            <column name="rank_sourceold" sql-type="int(11)"/>
+        </property>
+        <property name="username">
+            <column name="username" sql-type="varchar(50)" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

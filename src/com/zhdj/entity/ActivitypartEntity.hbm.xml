@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.ActivitypartEntity" table="activitypart" schema="zhdj">
+        <id name="partFlag">
+            <column name="part_flag" sql-type="varchar(50)" length="50" not-null="true"/>
+        </id>
+        <property name="partUsername">
+            <column name="part_username" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="partId">
+            <column name="part_id" sql-type="int(11)"/>
+        </property>
+        <property name="partSituation">
+            <column name="part_situation" sql-type="int(11)"/>
+        </property>
+        <property name="partFileurl">
+            <column name="part_fileurl" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="partSubmitTime">
+            <column name="part_submit_time" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="partTime">
+            <column name="part_time" sql-type="varchar(100)" length="100"/>
+        </property>
+    </class>
+</hibernate-mapping>

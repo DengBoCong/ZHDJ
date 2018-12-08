@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ZHDJ">
+    <output-path>$PROJECT_DIR$/out/artifacts/zhdj</output-path>
+    <root id="archive" name="ZHDJ.war">
+      <element id="javaee-facet-resources" facet="ZHDJ/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ZHDJ" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="org.apache.commons:commons-dbcp2:2.1" />
+          <element id="library" level="project" name="Spring-4.3.18.RELEASE" />
+          <element id="library" level="project" name="Hibernate 5.3.2-5.3.2" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

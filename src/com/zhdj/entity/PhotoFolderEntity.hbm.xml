@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.PhotoFolderEntity" table="photo_folder" schema="zhdj">
+        <id name="id">
+            <column name="id" sql-type="varchar(100)" length="100" not-null="true"/>
+        </id>
+        <property name="descripe">
+            <column name="descripe" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="author">
+            <column name="author" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="cover">
+            <column name="cover" sql-type="varchar(200)" length="200"/>
+        </property>
+    </class>
+</hibernate-mapping>

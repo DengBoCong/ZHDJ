@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.UserEntity" table="user" schema="zhdj">
+        <id name="id">
+            <column name="id" sql-type="varchar(20)" length="20" not-null="true"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="image">
+            <column name="image" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="rankFlag">
+            <column name="rank_flag" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sector">
+            <column name="sector" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="institute">
+            <column name="institute" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="grade">
+            <column name="grade" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="birthday">
+            <column name="birthday" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="nation">
+            <column name="nation" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="partytime">
+            <column name="partytime" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="qq">
+            <column name="qq" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="idNumber">
+            <column name="id_number" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="partUser">
+            <column name="part_user" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="trainUser">
+            <column name="train_user" sql-type="varchar(20)" length="20"/>
+        </property>
+    </class>
+</hibernate-mapping>

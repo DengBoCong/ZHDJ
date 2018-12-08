@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.PhotoEntity" table="photo" schema="zhdj">
+        <id name="photoId">
+            <column name="photo_id" sql-type="int(11)" not-null="true"/>
+        </id>
+        <property name="photoAuthor">
+            <column name="photo_author" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="photoTime">
+            <column name="photo_time" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="photoCover">
+            <column name="photo_cover" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="photoGood">
+            <column name="photo_good" sql-type="int(11)"/>
+        </property>
+        <property name="photoRead">
+            <column name="photo_read" sql-type="int(11)"/>
+        </property>
+        <property name="photoOwner">
+            <column name="photo_owner" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="authorCover">
+            <column name="author_cover" sql-type="varchar(1000)" length="1000"/>
+        </property>
+    </class>
+</hibernate-mapping>

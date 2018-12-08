@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.FileEntity" table="file" schema="zhdj">
+        <id name="fileId">
+            <column name="file_id" sql-type="varchar(100)" length="100" not-null="true"/>
+        </id>
+        <property name="fileUserid">
+            <column name="file_userid" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="fileFlag">
+            <column name="file_flag" sql-type="int(11)"/>
+        </property>
+        <property name="fileUrl">
+            <column name="file_url" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="fileSubmittime">
+            <column name="file_submittime" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="fileUsername">
+            <column name="file_username" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="fileName">
+            <column name="file_name" sql-type="varchar(50)" length="50"/>
+        </property>
+    </class>
+</hibernate-mapping>

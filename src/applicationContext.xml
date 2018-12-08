@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- data connection -->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/zhdj?useSSL=false"></property>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+
+    <!-- session factory -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/zhdj</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.c3p0.minPoolSize">5</prop>
+                <prop key="hibernate.c3p0.maxPoolSize">5000</prop>
+                <prop key="hibernate.c3p0.max_size">500</prop>
+                <prop key="hibernate.c3p0.timeout">30</prop>
+                <prop key="hibernate.c3p0.idle_test_period">30</prop>
+                <prop key="hibernate.c3p0.acquire_increment">2</prop>
+                <prop key="hibernate.c3p0.max_statements">10</prop>
+                <prop key="current_session_context_class">thread</prop>
+            </props>
+        </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:com/zhdj/entity/UserEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivityEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitybannerEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/MessageEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitybannerEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/PhotoFolderEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitybannerEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/PhotoEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/UserEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitypartEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitybannerEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/UserRankEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/UserRecondEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/UserEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/FileEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/UserRankEntity.hbm.xml</value>
+                <value>classpath:com/zhdj/entity/ActivitybannerEntity.hbm.xml</value>
+            </list>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.zhdj.entity.UserEntity</value>
+                <value>com.zhdj.entity.ActivityEntity</value>
+                <value>com.zhdj.entity.ActivitybannerEntity</value>
+                <value>com.zhdj.entity.MessageEntity</value>
+                <value>com.zhdj.entity.PhotoFolderEntity</value>
+                <value>com.zhdj.entity.PhotoEntity</value>
+                <value>com.zhdj.entity.ActivitypartEntity</value>
+                <value>com.zhdj.entity.UserRankEntity</value>
+                <value>com.zhdj.entity.UserRecondEntity</value>
+                <value>com.zhdj.entity.FileEntity</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="com.zhdj.test.TestService" id="testService">
+        <property name="name" value="spring"></property>
+    </bean>
+    <!--hibernate测试加入-->
+    <bean id="user" class="com.zhdj.service.UserImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="activity" class="com.zhdj.service.ActivityImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="activityBanner" class="com.zhdj.service.ActivityBannerImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="message" class="com.zhdj.service.MessageImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    
+    <bean id="photoFolder" class="com.zhdj.service.PhotoFolderImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="photo" class="com.zhdj.service.PhotoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="activityPart" class="com.zhdj.service.ActivityPartImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="userRank" class="com.zhdj.service.UserRankImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="userRecond" class="com.zhdj.service.UserRecondImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <bean id="filesubmit" class="com.zhdj.service.FileSubmitImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!--<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>-->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"/>
+    <aop:config>
+        <aop:pointcut expression="within(service.*)" id="txPointCut"></aop:pointcut>
+        <aop:advisor advice-ref="txTransactionManager"	pointcut-ref="txPointCut"></aop:advisor>
+    </aop:config>
+
+    <tx:advice id="txTransactionManager"/>-->
+</beans>

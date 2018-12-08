@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.zhdj.entity.ActivitybannerEntity" table="activitybanner" schema="zhdj">
+        <id name="id">
+            <column name="id" sql-type="int(11)" not-null="true"/>
+        </id>
+        <property name="title">
+            <column name="title" sql-type="varchar(500)" length="500"/>
+        </property>
+        <property name="authorName">
+            <column name="author_name" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="cover">
+            <column name="cover" sql-type="varchar(1000)" length="1000"/>
+        </property>
+        <property name="publishedAt">
+            <column name="published_at" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="summary">
+            <column name="summary" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="varchar(10000)" length="10000"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="postId">
+            <column name="post_id" sql-type="int(11)"/>
+        </property>
+        <property name="flag">
+            <column name="flag" sql-type="int(11)"/>
+        </property>
+        <property name="partNum">
+            <column name="part_num" sql-type="int(11)"/>
+        </property>
+        <property name="partDeadline">
+            <column name="part_deadline" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="submitDeadline">
+            <column name="submit_deadline" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="submitFlag">
+            <column name="submit_flag" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>
